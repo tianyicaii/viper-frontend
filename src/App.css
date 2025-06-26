@@ -1,22 +1,57 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
-}
+/* 确保与Tailwind样式一致的全局样式 */
 
+/* 输入框样式 */
 input, textarea {
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  border-radius: 6px; /* rounded-md */
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: white;
+  color: #374151; /* text-gray-700 */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 input:focus, textarea:focus {
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0,123,255,.25);
+  border-color: #3b82f6; /* border-blue-500 */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1); /* focus:ring-blue-500 */
 }
 
+/* Tailwind按钮悬停效果 */
+.bg-green-500:hover {
+  background-color: #16a34a !important; /* hover:bg-green-600 */
+}
+
+.bg-blue-500:hover {
+  background-color: #2563eb !important; /* hover:bg-blue-600 */
+}
+
+.bg-yellow-500:hover {
+  background-color: #eab308 !important; /* hover:bg-yellow-600 */
+}
+
+.bg-gray-500:hover {
+  background-color: #4b5563 !important; /* hover:bg-gray-600 */
+}
+
+/* 通用按钮悬停效果 */
 button:hover:not(:disabled) {
-  background-color: #0056b3 !important;
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+/* 确保禁用按钮样式 */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* 响应式调整 */
+@media (max-width: 640px) {
+  .w-48 {
+    width: 100% !important;
+    max-width: 200px;
+  }
 }
